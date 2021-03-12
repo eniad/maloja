@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "42010:42010"
+    volumes:
+      - .:/usr/local/app
+    env_file: .env
+    stdin_open: true
+    tty: true
