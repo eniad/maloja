@@ -12,10 +12,12 @@ nohup.out
 # only for development, normally external
 /doreah
 
-# dev environment and build artifacts
+# build artifacts
 build
 dist
 *.egg*
+
+# dev environment
 .env
 .local
 .python-version
