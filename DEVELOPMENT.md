@@ -83,8 +83,9 @@ Maloja requires the data directory to be setup before local development can be d
 - [x] Automatically updated content on edits. See these resources:
   - [Bottle Tutorial Auto Reloading](https://bottlepy.org/docs/dev/tutorial.html#auto-reloading)
   - [How to change and reload python code in waitress without restarting the server?](https://stackoverflow.com/questions/36817604/how-to-change-and-reload-python-code-in-waitress-without-restarting-the-server)
-  - Done by using `python -m maloja.server`
+  - Works by simply using `python -m maloja.server`. Maybe read more about waitress to understand why that works.
 - Read about Doreah and understand how maloja uses it for local dev
 - Figure out CSV import using dev server
 - Set up user for Docker container following the ansible-nas convention to avoid `root` owning files
+- Reference DEVELOPMENT.md in README.md Docker section
 - Squash commits
