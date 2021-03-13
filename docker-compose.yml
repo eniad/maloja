@@ -3,10 +3,11 @@ services:
   dev:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
       - "42010:42010"
     volumes:
+      - .local:/data
       - .:/usr/local/app
     env_file: .env
     stdin_open: true
