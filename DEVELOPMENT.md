@@ -16,9 +16,9 @@ docker-compose up
 
 ## Prep for local development
 
-Maloja requires the data directory to be setup before local development can be done easily.
+Maloja requires the data directory to be setup before local development can be done easily. There are several back and forth steps involved.
 
-1. Set up local files in a persistent local directory. This gets wierd.
+1. Set up local files in a persistent local directory.
 
     ```bash
     mkdir -p .local/data_files
@@ -51,7 +51,13 @@ Maloja requires the data directory to be setup before local development can be d
     maloja stop
     ```
 
-    The maloja data directory is not setup correctly for subsequent runs.
+    1. Optional: Import scrobbles. See Maloja [Data](./README.md#data) for how to export your list from last.fm
+
+       ```bash
+       maloja import *filename*
+       ```
+
+    The maloja data directory is now setup correctly for subsequent runs.
 
 1. Re-edit the Dockerfile to switch the `dev` stage ENTRYPOINT to `python -m maloja.server`. The Dockerfile should contain these lines:
 
@@ -84,8 +90,9 @@ Maloja requires the data directory to be setup before local development can be d
   - [Bottle Tutorial Auto Reloading](https://bottlepy.org/docs/dev/tutorial.html#auto-reloading)
   - [How to change and reload python code in waitress without restarting the server?](https://stackoverflow.com/questions/36817604/how-to-change-and-reload-python-code-in-waitress-without-restarting-the-server)
   - Works by simply using `python -m maloja.server`. Maybe read more about waitress to understand why that works.
-- Read about Doreah and understand how maloja uses it for local dev
-- Figure out CSV import using dev server
+- [x] Read about Doreah and understand how maloja uses it for local dev
+  - Doreah is a personal util for the main Majola dev.
+- [x] Figure out CSV import using dev server
 - Set up user for Docker container following the ansible-nas convention to avoid `root` owning files
 - Reference DEVELOPMENT.md in README.md Docker section
 - Squash commits
