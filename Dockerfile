@@ -12,8 +12,8 @@ RUN apk add --no-cache --virtual .build-deps \
 
 RUN pip3 install psutil
 
-# development
-FROM base as dev
+# development preparation
+FROM base as dev_prep
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
@@ -28,7 +28,14 @@ RUN apk del .build-deps
 
 EXPOSE 42010
 
-# ENTRYPOINT /bin/bash
+# development setup
+FROM dev_prep as dev_setup
+
+ENTRYPOINT ./development/maloja_install.sh
+
+# development startup
+FROM dev_prep as dev
+
 ENTRYPOINT python -m maloja.server
 
 # production
