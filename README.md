@@ -31,6 +31,7 @@ You can check [my own Maloja page](https://maloja.krateng.ch) to see what it loo
 	* [Standard-compliant API](#standard-compliant-api)
 	* [Manual](#manual)
 * [How to extend](#how-to-extend)
+* [How to develop](#how-to-develop)
 
 ## Features
 
@@ -177,3 +178,7 @@ If you can't automatically scrobble your music, you can always do it manually on
 ## How to extend
 
 If you'd like to implement anything on top of Maloja, visit `/api_explorer`.
+
+## How to develop
+
+If you'd like to develop Maloja, read (DEVELOPMENT.md)(./DEVELOPMENT.md)
